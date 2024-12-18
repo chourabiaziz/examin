@@ -1,13 +1,13 @@
 package esprit.tn.examin.entity;
 
-import java.util.Set;
+import java.sql.Date;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,18 +18,17 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Beneficiaire {
-
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private int cin;
+    private int idUtilisateur;
     private String nom;
     private String prenom;
-    private String profession;
-    private float salaire;
+    private String password;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "beneficiaire")
-    private Set<Assurance> assurances;
+    private Specialite specialite;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    Classe classe;
 
 }

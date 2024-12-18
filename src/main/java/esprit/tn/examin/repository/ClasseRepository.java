@@ -3,9 +3,9 @@ package esprit.tn.examin.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import esprit.tn.examin.entity.Assurance;
+import esprit.tn.examin.entity.Classe;
 
 @Repository
-public interface AssuranceRepository extends JpaRepository<Assurance, Integer> {
+public interface ClasseRepository extends JpaRepository<Classe, Integer> {
 
 }
